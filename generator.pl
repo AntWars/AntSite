@@ -4,7 +4,7 @@ open($templateFile, '<:encoding(UTF-8)', 'template.html')
 	or die 'Couldn\'t open template.html!';
 $template .= $_ while (<$templateFile>);
 close $templateFile;
-foreach $pageFileName (<*.txt>) {
+foreach $pageFileName (<*.page>) {
 	print 'Processing ' . $pageFileName . '...' . "\n";
 	open($pageFile, '<:encoding(UTF-8)', $pageFileName);
 	$pageTitle = <$pageFile>;
@@ -17,7 +17,7 @@ foreach $pageFileName (<*.txt>) {
 	$ready =~ s/~~~/$pageTitle/g;
 	$ready =~ s/===/$page/g;
 	$dirName = $pageFileName;
-	$dirName =~ s/\.txt$//;
+	$dirName =~ s/\.page$//;
 	$dirName = '.' if ($dirName eq 'main');
 	die 'Page dir doesn\'t exists' unless (-d $dirName);
 	open($readyFile, '>:encoding(UTF-8)', "$dirName/index.html");
