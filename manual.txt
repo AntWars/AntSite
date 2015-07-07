@@ -1,0 +1,3 @@
+Manual
+Sorry, Mario, but this page is under construction.<br>
+You can read manual in Russian on our wiki: <a href="https://github.com/AntWars/AntWars/wiki/docs">https://github.com/AntWars/AntWars/wiki/docs</a>
